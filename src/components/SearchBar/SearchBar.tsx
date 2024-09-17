@@ -2,13 +2,18 @@ import { Field, Form, Formik } from "formik"
 import css from "./SearchBar.module.css"
 import toast, { Toaster } from "react-hot-toast"
 import { FcSearch } from "react-icons/fc";
+import { OnSubmitinterface } from "../../types";
 
 // const initial_Values = {query: ""}
 const notifyEmpty =()=> toast("text must be entered to search for images")
 
-const SearchBar = ({onSubmit}) => {
+const SearchBar = ({onSubmit}:OnSubmitinterface) => {
 
- const handleSubmit=(values, actions)=>{
+ 
+  return (
+    <Formik 
+    initialValues={{query: ""}} 
+    onSubmit={(values, actions)=>{
     if(values.query.trim()==="") {
       notifyEmpty()
     } 
@@ -17,14 +22,7 @@ const SearchBar = ({onSubmit}) => {
       
     }
     actions.resetForm()
-  }
-  
-
-
-  return (
-    <Formik 
-    initialValues={{query: ""}} 
-    onSubmit={handleSubmit}>
+  }}>
       <header className={css.container}>
   <Form className={css.form}>
     <Field className={css.field}

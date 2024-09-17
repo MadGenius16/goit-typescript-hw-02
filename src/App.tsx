@@ -7,15 +7,16 @@ import Loader from "./components/Loader/Loader";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "./components/ImageModal/ImageModal";
+import {ImageInterface } from "./types";
 
 
 function App() {
 
-  const [articles, setArticles] = useState([]);
-  const [page, setPage] = useState(1)
-  const [searchQuery, setSearchQuery] = useState("")
-  const[error, setError] = useState(false)
-  const[loader, setLoader] = useState(false)
+  const [articles, setArticles] = useState<ImageInterface[]>([]);
+  const [page, setPage] = useState<number>(1)
+  const [searchQuery, setSearchQuery] = useState<string>("")
+  const[error, setError] = useState<boolean>(false)
+  const[loader, setLoader] = useState<boolean>(false)
   
   const [targetPhoto, setTargetPhoto] = useState({alt: "", url: ""})
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -44,7 +45,7 @@ useEffect(()=>{
   fetchArticles()
 }, [searchQuery, page])
 
-  const  handleSearch = async (query) =>{
+  const  handleSearch = async (query:string) =>{
     setSearchQuery(query)
     setPage(1)
     setArticles([])
@@ -54,7 +55,7 @@ useEffect(()=>{
       setPage(page+1)
     }
 
-    const onImageClick = (alt, url) => {
+    const onImageClick = (alt:string, url:string) => {
       setTargetPhoto({alt, url});
       setIsModalOpen(true);
     };
