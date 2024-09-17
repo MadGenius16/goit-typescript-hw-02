@@ -1,0 +1,27 @@
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(70, 56, 56, 0.696);
+}
+
+.content {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  outline: none;
+  border-radius: 4px;
+  position: absolute;
+}
+
+.Img {
+  width: auto;
+  height: 800px;
+  border-radius: 10px;
+}
+
+.Open {
+  overflow: hidden;
+}

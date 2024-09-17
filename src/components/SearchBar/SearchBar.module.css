@@ -1,0 +1,34 @@
+.container {
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(54, 14, 234);
+  border-radius: 6px;
+}
+
+.form{
+  display: flex;
+  background-color: aliceblue;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.field{
+  padding: 0px 8px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+
+}
+
+.button{
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 6px 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+}
+
